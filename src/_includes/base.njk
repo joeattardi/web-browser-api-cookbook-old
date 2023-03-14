@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title + ' - ' if title }} Web Browser API Cookbook</title>
+  <link rel="stylesheet" href="{{ '/index.css' | url }}">
+</head>
+<body>
+  {% include "./components/header.njk" %}
+  {# <header>
+    <h1>{{ title }}</h1>
+  </header> #}
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
