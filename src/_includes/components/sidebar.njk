@@ -1,0 +1,23 @@
+<div id="sidebar">
+  {% set navPages = collections.demos | eleventyNavigation %}
+  <nav class="p-4 bg-slate-100">
+    <ul>
+      {% for item in navPages %}
+        <li>
+          {% include "./sidebar/nav-item.njk" %}
+
+          <ul class="pl-4">
+            {% for item in item.children %}
+              <li>
+                {% include "./sidebar/nav-item.njk" %}
+                {# <a class="flex p-2" href="{{ child.url }}">
+                  {{ child.title }}
+                </a> #}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

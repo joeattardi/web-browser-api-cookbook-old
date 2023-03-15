@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  grid-template-areas: 
+    "header  header"
+    "sidebar content";
+}
+
+#header {
+  grid-area: header;
+}
+
+#sidebar {
+  grid-area: sidebar;
+}
+
+#content {
+  grid-area: content;
+}
