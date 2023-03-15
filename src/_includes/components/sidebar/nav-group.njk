@@ -1,0 +1,17 @@
+<li>
+  <div class="group-toggle font-bold cursor-pointer hover:bg-slate-200 flex p-1">
+    <div class="grow">{{ item.title }}</div>
+    <span class="transition-all material-icons">
+      chevron_right
+    </span>
+  </div>
+  <ul class="hidden pl-4">
+    {% for child in item.children %}
+      <li class="hover:bg-slate-200">
+        <a class="flex p-1" href="{{ child.url }}">
+          {{ child.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</li>

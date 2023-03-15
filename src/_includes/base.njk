@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8"/>
     <title>{{ title + ' - ' if title }} Web Browser API Cookbook</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/index.css' | url }}">
   </head>
-  <body>
+  <body class="h-screen">
     <div id="layout">
       {% include "./components/header.njk" %}
       {% include "./components/sidebar.njk" %}
-      {# <header>
-          <h1>{{ title }}</h1>
-        </header> #}
       <main id="content">
         {{ content | safe }}
       </main>
     </div>
+    {% set js %}
+    {% include "./components/sidebar/nav-group.js" %}
+    {% endset %}
+    {{js}}
+    <script>{{ js  | safe }}</script>
   </body>
 </html>

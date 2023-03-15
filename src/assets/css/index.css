@@ -4,7 +4,9 @@
 
 #layout {
   display: grid;
-  grid-template-columns: 350px 1fr;
+  height: 100%;
+  grid-template-columns: 18rem 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
     "header  header"
     "sidebar content";
