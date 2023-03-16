@@ -10,19 +10,41 @@ eleventyNavigation:
 {% extends "demo.njk" %}
 
 {% block description %}
-  oh hi
+  This example shows how to remember a simple input value in local storage. When a color is selected, it will be
+  stored.
 {% endblock %}
 
-{# {% include "demo.njk" %} #}
+{% set html %}
+<div class="flex items-center">
+  <label class="mr-2" for="colorPicker">Select a color:</label>
+  <input type="color" id="colorPicker">
+</div>
+{% endset %}
 
-{# <details>
-  <summary>JS code</summary>
-{% highlight "js" %}
-const foo = document.querySelector('#foo');
-foo.focus();
+{% set js %}
+const colorPicker = document.querySelector('#colorPicker');
+
+// Look for a previously saved color and set it, if found.
+const savedColor = localStorage.getItem('savedColor');
+if (savedColor) {
+  colorPicker.value = savedColor;
+}
+
+// When the color is changed, save it to local storage.
+colorPicker.addEventListener('change', () => {
+  localStorage.setItem('savedColor', colorPicker.value);
+});
+{% endset %}
+
+{% block example %}
+{{ html | safe }}
+<script>{{ js | safe }}</script>
+
+{% endblock %}
+
+
+{% block code %}
+{% highlight "javascript" %}
+{{ js | safe }}
 {% endhighlight %}
-</details>
-
-{% highlight "html" %}
-<input type="color" id="foo">
-{% endhighlight %} #}
+{% endblock %}

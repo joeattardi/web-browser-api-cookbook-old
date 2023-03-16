@@ -15,10 +15,6 @@
         {{ content | safe }}
       </main>
     </div>
-    {% set js %}
-    {% include "./components/sidebar/nav-group.js" %}
-    {% endset %}
-    {{js}}
-    <script>{{ js  | safe }}</script>
+    <script>{% include "./components/sidebar/nav-group.js" %}</script>
   </body>
 </html>
