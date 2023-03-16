@@ -1,13 +1,15 @@
 <div class="p-4 bg-slate-100" id="sidebar">
   {% set navPages = collections.demos | eleventyNavigation %}
-  {# {% set currentGroup = navPages.find(item => page.url.startsWith(item.url)) %} #}
-  {# {{ currentGroup | json(2)}} #}
   <nav>
     <ul>
       {% for item in navPages %}
-        {% set isCurrentGroup = page.url.startsWith(item.url) %}
-        {% include "./sidebar/nav-group.njk" %}
-      {% endfor %}
-    </ul>
-  </nav>
-</div>
+        {% renderTemplate "webc", { 
+            item: item, 
+            isCurrentGroup: page.url.startsWith(item.url)  
+        } %}
+        <site-sidebar-nav :isCurrentGroup="isCurrentGroup" :title="item.title" :children="item.children"></site-sidebar-nav>
+      </template>
+      {% endrenderTemplate %}
+    {% endfor %}
+  </ul>
+</nav></div>

@@ -1,0 +1,6 @@
+<template webc:type="11ty" 11ty:type="njk">
+  {% set hoverClass = 'bg-emerald-600 text-white' if active else 'hover:bg-slate-300' %}
+  <li class="{{ hoverClass }} transition-colors duration-150 font-bold text-sm rounded-md">
+    <a class="flex p-2 m-1" :href="url" @html="title"></a>
+  </li>
+</template>
