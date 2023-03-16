@@ -1,14 +1,14 @@
 <li>
-  <div class="group-toggle font-bold cursor-pointer hover:bg-slate-200 flex p-1">
+  <div class="rounded-md group-toggle font-bold cursor-pointer hover:bg-slate-300 flex p-2">
     <div class="grow">{{ item.title }}</div>
-    <span class="transition-all material-icons">
+    <span class="{{ 'rotate-90' if isCurrentGroup }} w-6 transition-transform material-icons">
       chevron_right
     </span>
   </div>
-  <ul class="hidden pl-4">
+  <ul class="{{ 'hidden' if not isCurrentGroup }}">
     {% for child in item.children %}
-      <li class="hover:bg-slate-200">
-        <a class="flex p-1" href="{{ child.url }}">
+      <li class="{{ 'bg-emerald-600 text-white' if page.url === child.url }} transition-colors duration-150 font-bold text-sm rounded-md {{ 'hover:bg-emerald-600' if page.url === child.url else 'hover:bg-slate-300' }}">
+        <a class="flex p-2 m-1" href="{{ child.url }}">
           {{ child.title }}
         </a>
       </li>

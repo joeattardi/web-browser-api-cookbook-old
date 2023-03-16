@@ -1,0 +1,9 @@
+<main class="p-4">
+  <h2 class="text-3xl">{{ title }}</h2>
+
+  <p>
+    {% block description %}{% endblock %}
+  </p>
+
+  {{ content | safe }}
+</main>
