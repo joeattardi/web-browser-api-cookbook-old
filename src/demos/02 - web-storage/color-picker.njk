@@ -44,6 +44,24 @@ colorPicker.addEventListener('change', () => {
   {{ js | safe }}
 {% endset %}
 
+{% import 'code-block.njk' as codeBlock %}
+
+{% set code %}
+  {{ codeBlock.codeBlock(
+    'Persistence', 
+    'js', 
+    'Manages persisting the color value to local storage.', 
+    html) 
+  }}
+
+  {{ codeBlock.codeBlock(
+    'Form', 
+    'html', 
+    'Basic form including a color picker.', 
+    html) 
+  }}
+{% endset %}
+
 {% set exampleCode = [
   { label: 'Form', language: 'html', code: html },
   { label: 'Serialization', language: 'javascript', code: js }

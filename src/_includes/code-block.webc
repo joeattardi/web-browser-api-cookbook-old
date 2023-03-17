@@ -1,0 +1,13 @@
+
+<div>
+  <h4 class="flex">
+    <div class="font-bold" @html="title"></div>
+    <div class="bg-violet-600 text-white text-sm px-1 rounded ml-2 flex items-center font-bold" @html="language"></div>
+  </h4>
+  <slot name="description"></slot>
+  <syntax-highlight language="js" webc:import="npm:@11ty/eleventy-plugin-syntaxhighlight" @text="console.log('hi')">
+  </syntax-highlight>
+  <!-- <syntax-highlight language="javascript"><slot></slot></syntax-highlight> -->
+</template>
+
+</div>

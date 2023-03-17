@@ -104,10 +104,29 @@ function renderTodo(todo) {
 {{ jsOther | safe }}
 {% endset %}
 
-{% set exampleCode = [
-  { label: 'To-do app', language: 'html', code: html },
-  { label: 'Serialization', language: 'javascript', code: jsSerialization },
-  { label: 'Additional code', language: 'javascript', code: jsOther }
-]%}
+{% import 'code-block.njk' as codeBlock %}
+
+{% set code %}
+  {{ codeBlock.codeBlock(
+    'Serialization', 
+    'javascript', 
+    'Serializes objects to JSON and persists them in local storage.', 
+    jsSerialization) 
+  }}
+
+  {{ codeBlock.codeBlock(
+    'Additional code', 
+    'javascript', 
+    'Handles form submission, item rendering, and list updates.', 
+    jsOther) 
+  }}
+
+  {{ codeBlock.codeBlock(
+    'Layout', 
+    'html', 
+    'User interface for this example.', 
+    html) 
+  }}
+{% endset %}
 
 {% include "demo.njk" %}
