@@ -7,6 +7,9 @@
     </section>
   {% endif %}
 
+  {% set hasCode = js or html or css %}
+
+  {% if hasCode %}
   <section class="my-4">
     <h3 class="my-2 text-xl font-bold text-cyan-900">Demo</h3>
     <div class="bg-slate-200 p-4 border border-slate-400">
@@ -40,6 +43,8 @@
     {% highlight "css" %}
     {{ css | safe }}
     {% endhighlight %}
+  {% endif %}
+
   {% endif %}
 
   {{ content | safe }}
