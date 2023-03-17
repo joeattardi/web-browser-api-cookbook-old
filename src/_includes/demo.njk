@@ -1,5 +1,5 @@
 <main class="p-4">
-  <h2 class="text-cyan-900 text-3xl">{{ title }}</h2>
+  <h2 class="text-cyan-900 text-3xl mb-2">{{ title }}</h2>
 
   {% if description %}
     <section>
@@ -12,7 +12,7 @@
   {% if hasCode %}
   <section class="my-4">
     <h3 class="my-2 text-xl font-bold text-cyan-900">Demo</h3>
-    <div class="bg-slate-200 p-4 border border-slate-400">
+    <div class="bg-slate-100 p-4 border border-slate-400">
       <style>{{ css | safe }}</style>
       {{ html | safe }}
       <script>{{ js | safe }}</script>
@@ -23,7 +23,7 @@
     <h3 class="my-2 text-xl font-bold text-cyan-900">Code</h3>
     {% block code %}{% endblock %}
   </section>
-
+{# 
   {% if js %}
     <h4>JavaScript</h4>
     {% highlight "javascript" %}
@@ -43,8 +43,20 @@
     {% highlight "css" %}
     {{ css | safe }}
     {% endhighlight %}
+  {% endif %} #}
+
   {% endif %}
 
+  {% if exampleCode %}
+    {% for code in exampleCode %}
+      <h4 class="flex">
+        <div class="font-bold">{{code.label}}</div>
+        <div class="bg-violet-600 text-white text-sm px-1 rounded ml-2 flex items-center font-bold">{{code.language}}</div>
+      </h4>
+      {% highlight code.language %}
+      {{ code.code | safe }}
+      {% endhighlight %}
+    {% endfor %}
   {% endif %}
 
   {{ content | safe }}

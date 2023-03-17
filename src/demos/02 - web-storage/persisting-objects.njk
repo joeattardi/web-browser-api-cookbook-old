@@ -8,9 +8,106 @@ eleventyNavigation:
   parent: webStorage
 ---
 
+{% set description %}
+  <p>
+    A simplified to-do list that persists its data in local storage.
+  </p>
+  <ul class="list-disc pl-6">
+    <li>Enter some text and click "Add" to add a to-do.</li>
+    <li>The list only contains incomplete to-dos. When a to-do is marked completed, it is immediately removed.</li>
+  </ul>
+{% endset %}
 
-{% extends "demo.njk" %}
+{% set html %}
+<template id="todoTemplate">
+  <li class="p-1 flex items-center">
+    <input class="mr-1" type="checkbox">
+    <div class="name"></div>
+  </li>
+</template>
 
-{% block description %}
-  oh hi
-{% endblock %}
+<form class="flex">
+  <input 
+    autofocus 
+    name="todo" 
+    class="border border-slate-400 px-2 py-1 rounded w-full" 
+    placeholder="Add a todo..."
+  >
+  <button class="bg-slate-300 px-2 py-1 rounded ml-2">Add</button>
+</form>
+
+<ul id="todos" class="mt-4"></ul>
+{% endset %}
+
+{% set jsSerialization %}
+const storageKey = 'todos';
+
+function saveTodoList() {
+  localStorage.setItem(storageKey, JSON.stringify(todoList));
+}
+
+function loadTodoList() {
+  const list = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+  list.forEach(todo => renderTodo(todo));
+
+  return list;
+}
+{% endset %}
+
+{% set jsOther %}
+const todoTemplate = document.querySelector('#todoTemplate');
+const form = document.querySelector('form');
+
+const todoElements = document.querySelector('#todos');
+
+let todoList = loadTodoList();
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const todo = {
+    id: Date.now(),
+    name: form.elements.todo.value,
+    completed: false
+  };
+  todoList.push(todo);
+
+  saveTodoList();
+  renderTodo(todo);
+
+  form.elements.todo.value = '';
+});
+
+function removeTodo(element, todo) {
+  todoList = todoList.filter(t => t !== todo);
+  saveTodoList();
+  todoElements.removeChild(element);
+}
+
+function renderTodo(todo) {
+  const element = todoTemplate.content.cloneNode(true).firstElementChild;
+
+  element.querySelector('.name').textContent = todo.name;
+  element.querySelector('input').addEventListener('click', event => {
+    if (event.target.checked) {
+      removeTodo(element, todo);
+    }
+  });
+
+  todoElements.appendChild(element);
+}
+{% endset %}
+
+{% set js %}
+{{ jsSerialization | safe }}
+{{ jsOther | safe }}
+{% endset %}
+
+{% set exampleCode = [
+  { label: 'To-do app', language: 'html', code: html },
+  { label: 'Serialization', language: 'javascript', code: jsSerialization },
+  { label: 'Additional code', language: 'javascript', code: jsOther }
+]%}
+
+{% include "demo.njk" %}
