@@ -1,3 +1,16 @@
+<script>
+  function toggleNavGroup(event) {
+    const submenu = event.target.closest('.group-toggle').nextElementSibling;
+    submenu.classList.toggle('hidden');
+    const icon = event.target.closest('.group-toggle').querySelector('.material-icons');
+    icon.classList.toggle('rotate-90');
+  }
+
+  document.querySelectorAll('.group-toggle').forEach(element => {
+    element.addEventListener('click', toggleNavGroup);
+  });
+</script>
+
 <template webc:type="11ty" 11ty:type="njk">
   <li>
     <div class="rounded-md group-toggle font-bold cursor-pointer hover:bg-slate-300 flex p-2">
