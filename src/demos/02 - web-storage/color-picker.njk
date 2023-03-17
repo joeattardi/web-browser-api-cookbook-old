@@ -7,18 +7,11 @@ eleventyNavigation:
   title: "Remembering an Input Value"
   parent: webStorage
 ---
-{% extends "demo.njk" %}
 
-{% block description %}
-  This example shows how to remember a simple input value in local storage. When a color is selected, it will be
-  stored.
-{% endblock %}
-
-{% set html %}
-<div class="flex items-center">
-  <label class="mr-2" for="colorPicker">Select a color:</label>
-  <input type="color" id="colorPicker">
-</div>
+{% set description %}
+  <p>
+      This example shows how to remember a simple input value in local storage. When a color is selected, it will be stored.
+  </p>
 {% endset %}
 
 {% set js %}
@@ -36,15 +29,15 @@ colorPicker.addEventListener('change', () => {
 });
 {% endset %}
 
-{% block example %}
-{{ html | safe }}
-<script>{{ js | safe }}</script>
+{% set html %}
+<div class="flex items-center">
+  <label class="mr-2" for="colorPicker">Select a color:</label>
+  <input type="color" id="colorPicker">
+</div>
+{% endset %}
 
-{% endblock %}
+{% set javascript %}
+  {{ js | safe }}
+{% endset %}
 
-
-{% block code %}
-{% highlight "javascript" %}
-{{ js | safe }}
-{% endhighlight %}
-{% endblock %}
+{% include "demo.njk" %}

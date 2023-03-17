@@ -1,17 +1,46 @@
 <main class="p-4">
-  <h2 class="text-3xl">{{ title }}</h2>
+  <h2 class="text-cyan-900 text-3xl">{{ title }}</h2>
 
-  <p>
-    {% block description %}{% endblock %}
-  </p>
+  {% if description %}
+    <section>
+      {{ description | safe }}
+    </section>
+  {% endif %}
 
-  <div>
-    {% block example %}{% endblock %}
-  </div>
+  <section class="my-4">
+    <h3 class="my-2 text-xl font-bold text-cyan-900">Demo</h3>
+    <div class="bg-slate-200 p-4 border border-slate-400">
+      <style>{{ css | safe }}</style>
+      {{ html | safe }}
+      <script>{{ js | safe }}</script>
+    </div>
+  </section>
 
-  <div>
+  <section class="my-4">
+    <h3 class="my-2 text-xl font-bold text-cyan-900">Code</h3>
     {% block code %}{% endblock %}
-  </div>
+  </section>
+
+  {% if js %}
+    <h4>JavaScript</h4>
+    {% highlight "javascript" %}
+    {{ js | safe }}
+    {% endhighlight %}
+  {% endif %}
+
+  {% if html %}
+    <h4>HTML</h4>
+    {% highlight "html" %}
+    {{ html | safe }}
+    {% endhighlight %}
+  {% endif %}
+
+  {% if css %}
+    <h4>CSS</h4>
+    {% highlight "css" %}
+    {{ css | safe }}
+    {% endhighlight %}
+  {% endif %}
 
   {{ content | safe }}
 </main>
