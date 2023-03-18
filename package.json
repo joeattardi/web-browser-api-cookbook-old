@@ -7,7 +7,9 @@
     "start": "npm-run-all -p dev:*",
     "dev:11ty": "eleventy --serve",
     "dev:css": "tailwindcss -i src/assets/css/index.css -o public/index.css --watch",
-    "build": "eleventy"
+    "build:11ty": "eleventy",
+    "build:css": "tailwindcss -i src/assets/css/index.css -o public/index.css",
+    "build": "npm-run-all -p build:*"
   },
   "keywords": [],
   "author": "",
