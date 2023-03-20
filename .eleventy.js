@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
     components: 'src/_includes/_components/**/*.webc'
   });
   eleventyConfig.addPassthroughCopy('src/assets/images');
+
   return {
     dir: {
       input: 'src',
