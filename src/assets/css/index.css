@@ -1,6 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+@import 'header.css';
+@import 'sidebar.css';
+
+:root {
+  --padding-sm: 0.5rem;
+
+  --font-xl: 1.25rem;
+
+  --link-color: #0B69A3;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #3f3f46;
+}
 
 #layout {
   display: grid;
@@ -16,10 +31,17 @@
   grid-area: header;
 }
 
-#sidebar {
-  grid-area: sidebar;
-}
+
 
 #content {
   grid-area: content;
+  padding: 0.5rem;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--link-color);
 }

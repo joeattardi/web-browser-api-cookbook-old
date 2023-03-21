@@ -1,6 +1,36 @@
 <template webc:type="11ty" 11ty:type="njk">
-  {% set hoverClass = 'bg-emerald-600 text-white' if active else 'hover:bg-slate-300' %}
-  <li class="{{ hoverClass }} transition-colors duration-150 font-bold text-sm rounded-md">
+  <!-- {% set hoverClass = 'bg-emerald-600 text-white' if active else 'hover:bg-slate-300' %} -->
+  <li class="sidenav-item {{ 'active' if active }}">
     <a class="flex p-2 m-1" :href="url" @html="title"></a>
   </li>
 </template>
+
+<style>
+  .sidenav-item {
+    padding: 0.35rem;
+    margin: 0 0.25rem;
+    padding-left: 1.25rem;
+    display: flex;
+    border-radius: 3px;
+  }
+
+  .sidenav-item a {
+    flex-grow: 1;
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+
+  .sidenav-item:hover {
+    background: #f3f4f6;
+  }
+
+  .sidenav-item.active {
+    background: #e2e8f0;
+  }
+
+  .sidenav-item.active a {
+    color: #0369a1;
+
+  }
+</style>

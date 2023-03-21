@@ -12,14 +12,11 @@
 </script>
 
 <template webc:type="11ty" 11ty:type="njk">
-  <li>
-    <div class="rounded-md group-toggle font-bold cursor-pointer hover:bg-slate-300 flex p-2">
-      <div class="grow">{{title}}</div>
-      <span class="{{ 'rotate-90' if isCurrentGroup }} w-6 transition-transform material-icons">
-        chevron_right
-      </span>
-    </div>
-    <ul class="{{ 'hidden' if not isCurrentGroup }}">
+  <li class="sidenav-group">
+    <h2>
+      <div class="title">{{title}}</div>
+    </h2>
+    <ul>
       {% for child in children %}
       <site-sidebar-nav-item :active="{{page.url === child.url}}" title="{{child.title}}" url="{{child.url}}">
       </site-sidebar-nav-item>

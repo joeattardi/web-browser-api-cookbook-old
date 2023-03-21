@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(webc, {
     components: 'src/_includes/_components/**/*.webc'
   });
+  eleventyConfig.addPassthroughCopy('src/assets/css');
   eleventyConfig.addPassthroughCopy('src/assets/images');
 
   return {
