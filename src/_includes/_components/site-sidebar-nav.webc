@@ -28,7 +28,7 @@
 <style>
   #sidebar {
     padding: 0.5em;
-    background-color: #FDFEFE;
+    background-color: var(--sidebar-background);
     grid-area: sidebar;
   }
 

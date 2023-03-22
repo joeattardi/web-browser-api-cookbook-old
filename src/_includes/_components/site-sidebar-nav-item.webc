@@ -24,16 +24,16 @@
   }
 
   .sidenav-item:hover {
-    background: #EFF6FB;
-    color: #0f172a;
+    background: var(--sidebar-hover-background);
+    color: var(--sidebar-hover-color);
   }
 
   .sidenav-item.active {
-    background: #B7D6ED;
+    background: var(--sidebar-active-background);
   }
 
   .sidenav-item.active a {
-    color: #1C4D70;
+    color: var(--sidebar-active-color);
 
   }
 </style>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Noto+Sans:wght@400;700&display=swap');
 
 @import 'header.css';
 @import 'sidebar.css';
@@ -11,16 +11,25 @@
 
   --font-xl: 1.25rem;
 
-  --link-color: #0B69A3;
+  --link-color: #0b69a3;
 
   --brand-color: #008080;
+
+  --sidebar-background: #fdfefe;
+  --sidebar-active-background: #b7d6ed;
+  --sidebar-active-color: #1c4d70;
+  --sidebar-hover-background: #eff6fb;
+  --sidebar-hover-color: #0f172a;
+
+  --body-background: #eff6fb;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -35,9 +44,9 @@ body {
   height: 100%;
   grid-template-columns: 18rem 1fr;
   grid-template-rows: auto 1fr;
-  grid-template-areas: 
-    "header  header"
-    "sidebar content";
+  grid-template-areas:
+    'header  header'
+    'sidebar content';
 }
 
 #header {
@@ -47,11 +56,13 @@ body {
 #content {
   grid-area: content;
   padding: 1rem 2rem;
-  background: #EFF6FB;
-  border-left: 1px solid #9BC7E6;
+  background:var(--body-background);
+  border-left: 1px solid #9bc7e6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -62,14 +73,14 @@ a {
 
 input {
   padding: 0.25em 0.5em;
-  border: 1px solid #B3B3B3;
+  border: 1px solid #b3b3b3;
   border-radius: 3px;
   font-size: 1rem;
 }
 
 button {
   padding: 0.5em 1em;
-  background: #B7D6ED;
+  background: #b7d6ed;
   border: none;
   font-size: 1rem;
   border-radius: 0.25em;
