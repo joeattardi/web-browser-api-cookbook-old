@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Sans&display=swap');
 
 @import 'header.css';
 @import 'sidebar.css';
+@import 'demo.css';
+
+/* https://coolors.co/008080-cee5f2-accbe1-4c3b4d-ecfeaa */
 
 :root {
   --padding-sm: 0.5rem;
@@ -9,11 +12,21 @@
   --font-xl: 1.25rem;
 
   --link-color: #0B69A3;
+
+  --brand-color: #008080;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   color: #3f3f46;
 }
 
@@ -31,17 +44,33 @@ body {
   grid-area: header;
 }
 
-
-
 #content {
   grid-area: content;
-  padding: 0.5rem;
+  padding: 1rem 2rem;
+  background: #EFF6FB;
+  border-left: 1px solid #9BC7E6;
 }
 
 h1, h2, h3 {
   margin: 0;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 a {
   color: var(--link-color);
+}
+
+input {
+  padding: 0.25em 0.5em;
+  border: 1px solid #B3B3B3;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.5em 1em;
+  background: #B7D6ED;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.25em;
 }

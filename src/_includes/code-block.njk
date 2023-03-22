@@ -1,8 +1,8 @@
 {% macro codeBlock(title, language, description, code) %}
-  <div class="my-8">
-    <h4 class="flex">
-      <div class="font-bold">{{ title }}</div>
-      <div class="bg-violet-600 text-white text-sm px-1 rounded ml-2 flex items-center font-bold">{{ language }}</div>
+  <div class="code-block">
+    <h4>
+      <div class="title">{{ title }}</div>
+      <div class="language {{ language }}">{{ language }}</div>
     </h4>
     <p>{{ description }}</p>
     {% highlight language %}

@@ -1,8 +1,7 @@
 #header {
   grid-area: header;
-  background-color: #e4e7eb;
-  padding: var(--padding-sm);
-  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+  background-color: var(--brand-color);
+  padding: 1.5em;
 }
 
 #header h1 {
@@ -11,10 +10,10 @@
 
 #header h1 a {
   text-decoration: none;
-  color: #1e293b;
+  color: #EFF6FB;
   font-weight: bold;
 }
 
 #header h1 a:hover {
-  color: #334155;
+  color: #FFFFFF;
 }

@@ -1,4 +1,4 @@
-<main class="p-4">
+<div class="demo-page">
   <h2 class="text-cyan-900 text-3xl mb-2">{{ title }}</h2>
 
   {% if description %}
@@ -10,20 +10,20 @@
   {% set hasCode = js or html or css %}
 
   {% if hasCode %}
-    <section class="my-4">
-      <h3 class="my-2 text-xl font-bold text-cyan-900">Demo</h3>
-      <div class="bg-slate-100 p-4 border border-slate-400">
+    <section>
+      <h3>Demo</h3>
+      <div class="demo">
         <style>{{ css | safe }}</style>
         {{ html | safe }}
         <script>{{ js | safe }}</script>
       </div>
     </section>
 
-    <section class="my-4">
-      <h3 class="my-2 text-xl font-bold text-cyan-900">Code</h3>
+    <section>
+      <h3>Code</h3>
       {{ code | safe }}
     </section>
   {% endif %}
 
   {{ content | safe }}
-</main>
+</div>
