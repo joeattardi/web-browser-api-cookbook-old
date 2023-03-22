@@ -22,6 +22,8 @@
   background: #AF7A6D;
   color: white;
   padding: 1em 2em;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 #landing-page header h1 {
