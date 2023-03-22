@@ -9,22 +9,50 @@
 </ul>
 {% endset %}
 
+{% set css %}
+#app nav {
+  background: #708090;
+  padding: 1em;
+}
+
+#app nav a {
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#app nav a:hover {
+  background: #8492A0;
+}
+
+#app nav a.active {
+  background: #C8C0B7;
+  color: black;
+}
+
+#router-content {
+  padding: 1em;
+  background: #F5F6F7;
+}
+{% endset %}
+
 {% set templates %}
 <template id="template-home">
-  <h2 class="text-2xl">Home</h2>
+  <h2>Home</h2>
   <p>This is the home page of the app</p>
 </template>
 
 <template id="template-about">
-  <h2 class="text-2xl">About</h2>
+  <h2>About</h2>
   <p>This is the about page of the app</p>
 </template>
 {% endset%}
 
 {% set layout %}
-
 <main id="app">
-  <nav class="my-2 p-4 bg-slate-300">
+  <nav>
     <a class="p-2 rounded" href="/urls-and-routing/simple-router/">Home</a>
     <a class="p-2 rounded" href="/urls-and-routing/simple-router/about/">About</a>
   </nav>
@@ -65,8 +93,8 @@ function createRouter() {
       }
 
       // Toggle some CSS classes to indicate the active route
-      app.querySelector('.bg-cyan-400')?.classList.remove('bg-cyan-400');
-      app.querySelector(`[href="${path}"`)?.classList.add('bg-cyan-400');
+      app.querySelector('.active')?.classList.remove('active');
+      app.querySelector(`[href="${path}"`)?.classList.add('active');
 
       if (pushState) {
         history.pushState({}, '', path);
