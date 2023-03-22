@@ -1,0 +1,11 @@
+---
+layout: "base.njk"
+---
+
+<div id="layout">
+  {% include "./components/header.njk" %}
+  {% include "./components/sidebar.njk" %}
+  <main id="content">
+    {{ content | safe }}
+  </main>
+</div>

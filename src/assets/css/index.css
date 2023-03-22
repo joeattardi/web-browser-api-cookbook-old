@@ -3,6 +3,7 @@
 @import 'header.css';
 @import 'sidebar.css';
 @import 'demo.css';
+@import 'landing-page.css';
 
 /* https://coolors.co/008080-cee5f2-accbe1-4c3b4d-ecfeaa */
 
@@ -107,4 +108,10 @@ form label {
   font-size: 0.95em;
   font-weight: bold;
   margin-bottom: 0.5em;
+}
+
+.emptyText {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 4em;
 }

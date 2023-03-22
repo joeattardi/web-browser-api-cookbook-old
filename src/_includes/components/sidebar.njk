@@ -8,7 +8,6 @@
             isCurrentGroup: page.url.startsWith(item.url)  
         } %}
         <site-sidebar-nav :isCurrentGroup="isCurrentGroup" :title="item.title" :children="item.children"></site-sidebar-nav>
-      </template>
       {% endrenderTemplate %}
     {% endfor %}
   </ul>

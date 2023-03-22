@@ -4,4 +4,10 @@
       <span>Web Browser API Cookbook</span>
     </a>
   </h1>
+  {% set navPages = collections.topNav | eleventyNavigation %}
+  {% renderTemplate "webc", {
+    items: navPages
+  } %}
+  <site-top-nav webc:nokeep="webc:nokeep" :items="items"></site-top-nav>
+  {% endrenderTemplate %}
 </header>

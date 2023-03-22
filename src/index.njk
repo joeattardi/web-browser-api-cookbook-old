@@ -1,16 +1,22 @@
 ---
 layout: "base.njk"
 ---
-<main>
-  <h1>Web Browser API Cookbook</h1>
-  <h2>Demos and Sample Code</h2>
+{% set navPages = collections.topNav | eleventyNavigation %}
+<div id="landing-page">
+  <header>
+      {% renderTemplate "webc", {
+        items: navPages
+      } %}
+        <site-top-nav webc:nokeep :items="items"></site-top-nav>
+      {% endrenderTemplate %}
+    <div class="titles">
+      <h1>Web Browser API Cookbook</h1>
+      <h2>Joe Attardi</h2>
+      <h3>Example Code and Demos</h3>
+      <a href="/demos/index.html" class="cta">Get Started</a>
+    </div>
+  </header>
+  <main id="landing-page">
 
-  <p>
-    Welcome to the companion website for "Web Browser API Cookbook" by Joe Attardi. This site contains expanded sample code from the various recipes found in the book,
-    as well as fully working demos.
-  </p>
-
-  <p>
-    Get started by exploring the demos, grouped by chapter, in the sidebar.
-  </p>
-</main>
+  </main>
+</div>

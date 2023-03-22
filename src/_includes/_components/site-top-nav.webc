@@ -1,0 +1,30 @@
+<template webc:type="11ty" 11ty:type="njk">
+  <nav class="top-nav-bar">
+    <ul>
+      {% for item in items %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</template>
+
+<style>
+  .top-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1em;
+    margin: 0;
+  }
+
+  .top-nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .top-nav-bar a {
+    color: white;
+    text-decoration: none;
+  }
+</style>

@@ -1,7 +1,8 @@
 ---
-layout: "base.njk"
+layout: "content-page.njk"
 title: "Remembering an Input Value"
 permalink: "/web-storage/color-picker.html"
+tags: topNav
 eleventyNavigation:
   order: 1
   key: colorPicker
@@ -32,6 +33,14 @@ if (savedColor) {
 colorPicker.addEventListener('change', () => {
   localStorage.setItem('savedColor', colorPicker.value);
 });
+{% endset %}
+
+{% set css %}
+#colorPicker {
+  width: 3em;
+  height: 3em;
+  padding: 0.5em;
+}
 {% endset %}
 
 {% set html %}
