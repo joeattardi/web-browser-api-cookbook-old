@@ -3,6 +3,7 @@ layout: "base.njk"
 title: "Parsing URLs"
 permalink: "/urls-and-routing/parsing-urls.html"
 eleventyNavigation:
+  order: 1
   key: parsingUrls
   title: "Parsing URLs"
   parent: urlsAndRouting
@@ -49,29 +50,47 @@ form.addEventListener('submit', event => {
 });
 {% endset %}
 
+{% set css %}
+.url-card {
+  padding: 1em;
+  margin: 0.5em 0;
+  background: #EDF2DB;
+  border: 1px solid #D4E1AB;
+}
+
+.url-card h4 {
+  margin: 0;
+  font-size: 1.2em;
+}
+{% endset %}
+
 {% set templateHtml %}
 <template id="url-card">
-  <div class="bg-gray-50 rounded my-4 p-2 px-4 border border-slate-300">
-    <div class="mb-2">
-      <h4 class="font-bold text-xl url"></h4>
-    </div>
-    <div class="card-body">
-      <ul class="m-0"></ul>
+  <div class="url-card">
+    <h4></h4>
+    <div>
+      <ul></ul>
     </div>
   </div>
 </template>
 {% endset %}
 
 {% set layoutHtml %}
-<form class="flex">
-  <input 
-    type="url"
-    autofocus 
-    name="url" 
-    class="border border-slate-400 px-2 py-1 rounded w-full" 
-    placeholder="Enter a URL..."
-  >
-  <button class="shrink-0 bg-slate-300 px-2 py-1 rounded ml-2">Parse URL</button>
+<form>
+  <div class="form-field">
+    <label for="url">Enter URL</label>
+    <input 
+      id="url"
+      type="url"
+      required
+      autofocus 
+      name="url" 
+      placeholder="Enter a URL..."
+    >
+  </div>
+  <div class="form-actions">
+    <button>Parse URL</button>
+  </div>
 </form>
 <div id="results"></div>
 {% endset %}

@@ -19,20 +19,6 @@ eleventyNavigation:
   </ul>
 {% endset %}
 
-{% set css %}
-
-.color-form {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.95em;
-  font-weight: bold;
-}
-
-.color-form label {
-  margin-bottom: 0.5em;
-}
-{% endset %}
-
 {% set js %}
 const colorPicker = document.querySelector('#colorPicker');
 
@@ -49,10 +35,12 @@ colorPicker.addEventListener('change', () => {
 {% endset %}
 
 {% set html %}
-<div class="color-form">
-  <label for="colorPicker">Background color</label>
-  <input type="color" id="colorPicker">
-</div>
+<form>
+  <div class="form-field">
+    <label for="colorPicker">Background color</label>
+    <input type="color" id="colorPicker">
+  </div>
+</form>
 {% endset %}
 
 {% set javascript %}
