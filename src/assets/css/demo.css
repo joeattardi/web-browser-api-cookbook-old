@@ -2,13 +2,16 @@
   margin: 1rem 0;
 }
 
+.demo-page .wrapper {
+  padding: 1em;
+}
+
 .demo-page section h3 {
   margin-bottom: 0.5rem;
 }
 
 .demo-page .demo {
   background: #ffffff;
-  padding: 2em;
   border-radius: 5px;
   border: 1px solid #9bc7e6;
 }

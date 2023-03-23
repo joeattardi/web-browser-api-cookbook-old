@@ -43,15 +43,11 @@ body {
 #layout {
   display: grid;
   height: 100%;
-  grid-template-columns: 18rem 1fr;
+  grid-template-columns: 18rem minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'header  header'
     'sidebar content';
-}
-
-#header {
-  grid-area: header;
 }
 
 #content {
@@ -114,4 +110,20 @@ form label {
   text-align: center;
   font-size: 1.1em;
   margin-top: 4em;
+}
+
+@media screen and (max-width: 768px) {
+  #layout {
+    display: grid;
+    height: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'header'
+      'content';
+  }
+
+  #sidebar {
+    display: none;
+  }
 }

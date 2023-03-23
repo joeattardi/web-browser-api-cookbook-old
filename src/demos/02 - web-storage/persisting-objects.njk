@@ -43,6 +43,7 @@ eleventyNavigation:
     width: 100%;
     font-size: 1.25em;
     line-height: 1.25em;
+    margin: 0.5em 0;
   }
 
   .todo input {
@@ -60,16 +61,18 @@ eleventyNavigation:
   </li>
 </template>
 
-<form class="todo-form">
-  <input 
-    autofocus 
-    name="todo" 
-    class="border border-slate-400 px-2 py-1 rounded w-full" 
-    placeholder="Add a todo and press Enter..."
-  >
-</form>
+<div class="wrapper">
+  <form class="todo-form">
+    <input 
+      autofocus 
+      name="todo" 
+      class="border border-slate-400 px-2 py-1 rounded w-full" 
+      placeholder="Add a todo and press Enter..."
+    >
+  </form>
 
-<ul id="todos"></ul>
+  <ul id="todos"></ul>
+</div>
 {% endset %}
 
 {% set jsSerialization %}

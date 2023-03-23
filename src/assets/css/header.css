@@ -6,6 +6,18 @@
   padding: 1em;
 }
 
+#header #nav-menu {
+  display: none;
+  color: white;
+  background: transparent;
+  padding: 0.25em;
+  margin-right: 1em;
+}
+
+#header #nav-menu .material-icons-round {
+  font-size: 2em;
+}
+
 #header h1 {
   font-size: 1.2rem;
   flex-grow: 1;
@@ -19,4 +31,10 @@
 
 #header h1 a:hover {
   color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  #header #nav-menu {
+    display: flex;
+  }
 }
