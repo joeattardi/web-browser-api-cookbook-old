@@ -1,22 +1,27 @@
 ---
 layout: "base.njk"
 ---
-{% set navPages = collections.topNav | eleventyNavigation %}
-<div id="landing-page">
-  <header>
-      {% renderTemplate "webc", {
-        items: navPages
-      } %}
-        <site-top-nav webc:nokeep :items="items"></site-top-nav>
-      {% endrenderTemplate %}
-    <div class="titles">
-      <h1>Web Browser API Cookbook</h1>
-      <h2>Joe Attardi</h2>
-      <h3>Example Code and Demos</h3>
-      <a href="/demos/index.html" class="cta">Get Started</a>
-    </div>
-  </header>
-  <main id="landing-page">
 
-  </main>
+<div id="landing-page">
+  <h2>Web Browser API Cookbook</h2>
+
+  <strong>Welcome!</strong>
+
+  <p>
+    This is the companion website for the upcoming book <em>Web Browser API Cookbook</em> by Joe Attardi. Each recipe from the
+    book is expanded upon with a fully functional live demo, with all example code included.
+  </p>
+
+  <strong>PLEASE NOTE:</strong>
+
+  <p style="margin-top: 0;">
+    The book, and this website, are both works in progress. Functioning examples are being added as the book is written, but
+    there may be times where something is broken.
+  </p>
+
+  <p>
+    If you are having problems with the site or have any questions or feedback, please contact me 
+    at <a href="mailto:jattardi@gmail.com">jattardi@gmail.com</a>.
+  </p>
+
 </div>
