@@ -1,1 +1,36 @@
+#sidebar {
+  position: relative;
+}
 
+#sidebar nav {
+  padding: 0.5em;
+  background-color: var(--sidebar-background);
+  grid-area: sidebar;
+}
+
+#sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #sidebar nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--sidebar-width);
+    z-index: 1;
+    transition: transform 250ms;
+    transform: translateX(-100%);
+  }
+
+  #sidebar.open nav {
+    transform: translateX(0);
+  }
+
+  #sidebar.open + #content {
+    filter: brightness(0.25);
+  }
+}

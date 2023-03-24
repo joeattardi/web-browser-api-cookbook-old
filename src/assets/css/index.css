@@ -16,6 +16,7 @@
 
   --brand-color: #008080;
 
+  --sidebar-width: 18rem;
   --sidebar-background: #fdfefe;
   --sidebar-active-background: #b7d6ed;
   --sidebar-active-color: #1c4d70;
@@ -43,7 +44,7 @@ body {
 #layout {
   display: grid;
   height: 100%;
-  grid-template-columns: 18rem minmax(0, 1fr);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'header  header'
@@ -55,6 +56,7 @@ body {
   padding: 1rem 2rem;
   background: var(--body-background);
   border-left: 1px solid #9bc7e6;
+  transition: filter 250ms;
 }
 
 h1,
@@ -116,14 +118,12 @@ form label {
   #layout {
     display: grid;
     height: 100%;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 0) minmax(0, 1fr);
+    /* grid-template-columns: minmax(0, 1fr); */
     grid-template-rows: auto 1fr;
     grid-template-areas:
-      'header'
-      'content';
-  }
-
-  #sidebar {
-    display: none;
+      'header header'
+      'sidebar content';
   }
 }
+

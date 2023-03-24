@@ -15,4 +15,18 @@
   } %}
   <site-top-nav webc:nokeep="webc:nokeep" :items="items"></site-top-nav>
   {% endrenderTemplate %}
+
+  <script>
+    const menuButton = document.querySelector('#nav-menu');
+    
+    menuButton.addEventListener('click', () => {
+      const sidebar = document.querySelector('#sidebar');
+      sidebar.classList.toggle('open');
+      menuButton.classList.toggle('open');
+
+      menuButton.querySelector('.material-icons-round').textContent = 
+        menuButton.classList.contains('open') ? 'close' : 'menu';
+
+    });
+  </script>
 </header>

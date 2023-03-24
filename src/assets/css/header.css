@@ -8,10 +8,16 @@
 
 #header #nav-menu {
   display: none;
-  color: white;
+  color: #ffffff;
   background: transparent;
   padding: 0.25em;
   margin-right: 1em;
+  border-radius: 50%;
+}
+
+#header #nav-menu.open {
+  background: #ffffff;
+  color: var(--brand-color);
 }
 
 #header #nav-menu .material-icons-round {

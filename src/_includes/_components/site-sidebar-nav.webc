@@ -26,18 +26,6 @@
 </template>
 
 <style>
-  #sidebar {
-    padding: 0.5em;
-    background-color: var(--sidebar-background);
-    grid-area: sidebar;
-  }
-
-  #sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
   .sidenav-group h2 {
     display: flex;
     align-items: center;
