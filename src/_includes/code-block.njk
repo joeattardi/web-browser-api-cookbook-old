@@ -1,3 +1,9 @@
+{% macro renderFiles(collection, basedir) %}
+  {% for file in collection %}
+    {% include basedir + "/" + file.filename %}
+  {% endfor %}
+{% endmacro %}
+
 {% macro codeBlock(title, language, description, code) %}
   <div class="code-block">
     <h4>

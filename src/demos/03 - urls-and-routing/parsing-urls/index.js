@@ -10,7 +10,7 @@ const urlProperties = [
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-
+  
   const url = new URL(event.target.elements.url.value);
   event.target.elements.url.value = '';
 

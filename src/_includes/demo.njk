@@ -1,5 +1,7 @@
 <div class="demo-page">
   <h2 class="text-cyan-900 text-3xl mb-2">{{ title }}</h2>
+  
+  {% import 'code-block.njk' as codeBlock %}
 
   {% if description %}
     <section>
@@ -7,23 +9,33 @@
     </section>
   {% endif %}
 
-  {% set hasCode = js or html or css %}
+  <section>
+    <h3>Demo</h3>
+    <div class="demo">
+      <style>
+        {{ codeBlock.renderFiles(files.css, basedir)}}
+      </style>
+      {{ codeBlock.renderFiles(files.html, basedir)}}
+      <script>
+        {{ codeBlock.renderFiles(files.js, basedir) }}
+      </script>
+    </div>
+  </section>
 
-  {% if hasCode %}
-    <section>
-      <h3>Demo</h3>
-      <div class="demo">
-        <style>{{ css | safe }}</style>
-        {{ html | safe }}
-        <script>{{ js | safe }}</script>
-      </div>
-    </section>
-
-    <section>
-      <h3>Code</h3>
-      {{ code | safe }}
-    </section>
-  {% endif %}
-
-  {{ content | safe }}
+  <section>
+    <h3>Code</h3>
+    {% for type, entries in files %}
+      {% for file in entries %}
+        {% set content %}
+          {% include basedir + "/" + file.filename %}
+        {% endset%}
+        {{ codeBlock.codeBlock(
+          file.filename,
+          type,
+          file.description,
+          content 
+        )}}
+      {% endfor%}
+    {% endfor %}
+  </section>
 </div>
