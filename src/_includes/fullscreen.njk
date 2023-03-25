@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% import 'code-block.njk' as codeBlock %}
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{{ title + ' - ' if title }} Web Browser API Cookbook</title>
@@ -11,14 +12,18 @@
     <style>
       {{ css | safe }}
     </style>
-    <style>{% getBundle "css" %}</style>
+    <style>
+      {{ codeBlock.renderFiles(files.css, basedir)}}
+    </style>
   </head>
   <body class="fullscreen">
       <h1>{{ title }}</h1>
       <main>
-        {{ html | safe }}
+        {{ codeBlock.renderFiles(files.html, basedir)}}
       </main>
-    <script>{{ js | safe }}</script>
+    <script>
+      {{ codeBlock.renderFiles(files.js, basedir)}}
+    </script>
     <script>{% getBundle "js" %}</script>
   </body>
 </html>
