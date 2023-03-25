@@ -1,11 +1,14 @@
 <header id="header">
   <button id="nav-menu">
-    <span class="material-icons-round">
+    <span class="material-symbols-sharp">
       menu
     </span>
   </button>
   <h1>
     <a href="/">
+      <span class="material-symbols-sharp">
+        restaurant_menu
+      </span>
       <span>Web Browser API Cookbook</span>
     </a>
   </h1>
@@ -24,7 +27,7 @@
       sidebar.classList.toggle('open');
       menuButton.classList.toggle('open');
 
-      menuButton.querySelector('.material-icons-round').textContent = 
+      menuButton.querySelector('.material-symbols-sharp').textContent = 
         menuButton.classList.contains('open') ? 'close' : 'menu';
 
     });
