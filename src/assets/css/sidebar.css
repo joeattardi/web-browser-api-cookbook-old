@@ -1,8 +1,11 @@
 #sidebar {
   position: relative;
+  overflow: auto;
+  width: var(--sidebar-width);
 }
 
 #sidebar nav {
+  height: 100%;
   padding: 0.5em;
   background-color: var(--sidebar-background);
   grid-area: sidebar;
@@ -10,6 +13,8 @@
 
 #sidebar nav ul {
   list-style-type: none;
+  overflow: auto;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -32,5 +37,6 @@
 
   #sidebar.open + #content {
     filter: brightness(0.25);
+    overflow: hidden;
   }
 }

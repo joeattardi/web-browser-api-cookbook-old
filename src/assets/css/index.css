@@ -53,6 +53,7 @@ body {
 
 #content {
   grid-area: content;
+  overflow: auto;
   padding: 1rem 2rem;
   background: var(--body-background);
   border-left: 1px solid #9bc7e6;
