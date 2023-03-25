@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{{ title + ' - ' if title }} Web Browser API Cookbook</title>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/fullscreen.css' | url }}">
+    <style>
+      {{ css | safe }}
+    </style>
+    <style>{% getBundle "css" %}</style>
+  </head>
+  <body class="fullscreen">
+      <h1>{{ title }}</h1>
+      <main>
+        {{ html | safe }}
+      </main>
+    <script>{{ js | safe }}</script>
+    <script>{% getBundle "js" %}</script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+---
+layout: "base.njk"
+title: "Parsing URLs"
+permalink: "/urls-and-routing/parsing-urls/"
+eleventyNavigation:
+  order: 1
+  key: parsingUrls
+  title: "Parsing URLs"
+  parent: urlsAndRouting
+---
+
+{% set description %}
+  <p>
+      Enter a URL and click "Parse URL". The value is passed to the <code>URL</code> constructor, and the component parts of the parsed URL will be shown.
+  </p>
+{% endset %}
+
+{% set js %}
+{% include "./index.js" %}
+{% endset %}
+
+{% set css %}
+{% include "./index.css" %}
+{% endset %}
+
+{% set templateHtml %}
+{% include "./template.html" %}
+{% endset %}
+
+{% set layoutHtml %}
+{% include "./index.html" %}
+{% endset %}
+
+{% set html %}
+{{ templateHtml | safe }}
+{{ layoutHtml | safe  }}
+{% endset %}
+
+{% set javascript %}
+  {{ js | safe }}
+{% endset %}
+
+{% import 'code-block.njk' as codeBlock %}
+
+{% set code %}
+  {{ codeBlock.codeBlock(
+    'URL parsing', 
+    'javascript', 
+    'Parses the URL and renders its properties.', 
+    js) 
+  }}
+
+  {{ codeBlock.codeBlock(
+    'Form', 
+    'html', 
+    'Basic form layout.', 
+    html) 
+  }}
+
+  {{ codeBlock.codeBlock(
+    'Template', 
+    'html', 
+    'Template used to render URL details.', 
+    layoutHtml) 
+  }}
+{% endset %}
+
+{% include "demo.njk" %}
