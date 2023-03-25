@@ -1,0 +1,16 @@
+---
+layout: "base.njk"
+permalink: "/web-storage/persisting-objects/"
+---
+
+{% set description %}
+  <p>
+    A simplified to-do list that persists its data in local storage.
+  </p>
+  <ul>
+    <li>Enter some text and click "Add" to add a to-do.</li>
+    <li>The list only contains incomplete to-dos. When a to-do is marked completed, it is immediately removed.</li>
+  </ul>
+{% endset %}
+
+{% include "demo.njk" %}

@@ -3,6 +3,11 @@
   
   {% import 'code-block.njk' as codeBlock %}
 
+
+  {% set css %}{% include basedir + "/index.css" %}{% endset %}
+  {% set html %}{% include basedir + "/demo.html" %}{% endset %}
+  {% set js %}{% include basedir + "/index.js" %}{% endset %}
+
   {% if description %}
     <section>
       {{ description | safe }}
@@ -13,29 +18,20 @@
     <h3>Demo</h3>
     <div class="demo">
       <style>
-        {{ codeBlock.renderFiles(files.css, basedir)}}
+        {{ css | safe }}
       </style>
-      {{ codeBlock.renderFiles(files.html, basedir)}}
+      {{ html | safe }}
       <script>
-        {{ codeBlock.renderFiles(files.js, basedir) }}
+        {{ js | safe }}
       </script>
     </div>
   </section>
 
   <section>
     <h3>Code</h3>
-    {% for type, entries in files %}
-      {% for file in entries %}
-        {% set content %}
-          {% include basedir + "/" + file.filename %}
-        {% endset%}
-        {{ codeBlock.codeBlock(
-          file.filename,
-          type,
-          file.description,
-          content 
-        )}}
-      {% endfor%}
-    {% endfor %}
+    {{ codeBlock.codeBlock('javascript', js)}}
+    {{ codeBlock.codeBlock('html', html)}}
+    {{ codeBlock.codeBlock('css', css)}}
+
   </section>
 </div>

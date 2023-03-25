@@ -1,0 +1,26 @@
+---
+layout: "base.njk"
+permalink: "/web-storage/storage-events/"
+---
+{% set description %}
+  <p>
+    A simplified to-do list that persists its data in local storage.
+  </p>
+  <ul>
+    <li>Enter some text and click "Add" to add a to-do.</li>
+    <li>The list only contains incomplete to-dos. When a to-do is marked completed, it is immediately removed.</li>
+    <li>The list data will be kept in sync with other browser tabs.</li>
+  </ul>
+
+  <p>
+    Open <a href="/web-storage/storage-events" target="_blank">this page in a second tab</a>.
+    When to-do items are added or removed from a given tab, any other open tabs will be kept in sync. This is done by listening
+    for the <code>storage</code> event.
+  </p>
+
+  <p>
+    Open the JavaScript console to see notifications when storage events are triggered.
+  </p>
+{% endset %}
+
+{% include "demo.njk" %}

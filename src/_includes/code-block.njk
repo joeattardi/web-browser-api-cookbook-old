@@ -4,13 +4,11 @@
   {% endfor %}
 {% endmacro %}
 
-{% macro codeBlock(title, language, description, code) %}
+{% macro codeBlock(language, code) %}
   <div class="code-block">
     <h4>
-      <div class="title">{{ title }}</div>
       <div class="language {{ language }}">{{ language }}</div>
     </h4>
-    <p>{{ description }}</p>
     {% highlight language %}
     {{ code | safe }}
     {% endhighlight %}

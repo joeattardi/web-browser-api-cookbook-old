@@ -1,0 +1,19 @@
+<template id="todoTemplate">
+  <li class="todo">
+    <input class="mr-1" type="checkbox">
+    <div class="name"></div>
+  </li>
+</template>
+
+<div class="wrapper">
+  <form class="todo-form">
+    <input 
+      autofocus 
+      name="todo" 
+      class="border border-slate-400 px-2 py-1 rounded w-full" 
+      placeholder="Add a todo and press Enter..."
+    >
+  </form>
+
+  <ul id="todos"></ul>
+</div>

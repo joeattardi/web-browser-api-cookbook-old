@@ -1,12 +1,12 @@
-const title = 'Parsing URLs';
+const title = 'Remembering an Input Value';
 
 module.exports = {
   title,
   basedir: __dirname,
   eleventyNavigation: {
     order: 1,
-    key: 'parsingUrls',
+    key: 'colorPicker',
     title,
-    parent: 'urlsAndRouting'
+    parent: 'webStorage'
   }
 };

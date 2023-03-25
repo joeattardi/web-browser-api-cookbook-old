@@ -1,0 +1,12 @@
+{% set description %}
+<p class="mb-2">
+  This is an example of basic client-side routing using the history API. 
+</p>
+<ul class="list-disc pl-6">
+  <li>Clicking a link will change the URL by calling <code>history.pushState</code> and replace the app contents with the new route.</li>
+  <li>If the user clicks the browser's Back or Forward button, we handle the <code>popstate</code> event to show the proper content.</li>
+  <li>This is all done on the client side only. Other than the initial page load, no requests are sent to the server.
+</ul>
+{% endset %}
+
+

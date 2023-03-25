@@ -18,7 +18,8 @@
     </h2>
     <ul>
       {% for child in children %}
-      <site-sidebar-nav-item :active="{{page.url === child.url}}" title="{{child.title}}" url="{{child.url}}">
+      {% set active = page.url === child.url or page.url === child.linkedChild %}
+      <site-sidebar-nav-item :active="{{active}}" title="{{child.title}}" url="{{child.url}}">
       </site-sidebar-nav-item>
       {% endfor %}
     </ul>
