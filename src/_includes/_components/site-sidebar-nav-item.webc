@@ -17,9 +17,9 @@
     flex-grow: 1;
     padding: 0.35rem;
     padding-left: 1.25rem;
-    color: #475569;
+    color: var(--sidebar-text-color);
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .sidenav-item:hover {

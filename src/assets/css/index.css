@@ -9,21 +9,8 @@
 
 :root {
   --padding-sm: 0.5rem;
-
   --font-xl: 1.25rem;
-
-  --link-color: #0b69a3;
-
-  --brand-color: #008080;
-
   --sidebar-width: 18rem;
-  --sidebar-background: #fdfefe;
-  --sidebar-active-background: #b7d6ed;
-  --sidebar-active-color: #1c4d70;
-  --sidebar-hover-background: #eff6fb;
-  --sidebar-hover-color: #0f172a;
-
-  --body-background: #eff6fb;
 }
 
 * {
@@ -35,10 +22,37 @@ body {
   height: 100%;
 }
 
+html {
+  --sidebar-background: #fdfefe;
+  --sidebar-text-color: #475569;
+  --sidebar-active-background: #b7d6ed;
+  --sidebar-active-color: #1c4d70;
+  --sidebar-hover-background: #eff6fb;
+  --sidebar-hover-color: #0f172a;
+  --link-color: #0b69a3;
+
+  --body-background: #eff6fb;
+  --header-background: #008080;
+  --text-color: #3f3f46;
+}
+
+html.light {
+
+}
+
+html.dark {
+  --body-background: #1c1917;
+  --sidebar-background: #1e293b;
+  --text-color: #94a3b8;
+  --sidebar-text-color: #e2e8f0;
+  --sidebar-hover-background: #314462;
+  --header-background: #004949;
+}
+
 body {
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
-  color: #3f3f46;
+  color: var(--text-color);
 }
 
 #layout {

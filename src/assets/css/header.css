@@ -2,7 +2,7 @@
   grid-area: header;
   display: flex;
   align-items: center;
-  background-color: var(--brand-color);
+  background-color: var(--header-background);
   padding: 1em;
 }
 
@@ -17,7 +17,7 @@
 
 #header #nav-menu.open {
   background: #ffffff;
-  color: var(--brand-color);
+  color: var(--header-background);
 }
 
 #header #nav-menu .material-symbols-sharp {

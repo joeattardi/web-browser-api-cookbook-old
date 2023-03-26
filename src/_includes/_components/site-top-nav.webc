@@ -1,4 +1,5 @@
 <template webc:type="11ty" 11ty:type="njk">
+  <div class="top-nav">
   <nav class="top-nav-bar">
     <ul>
       {% for item in items %}
@@ -6,9 +7,16 @@
       {% endfor %}
     </ul>
   </nav>
+  <dark-mode-toggle></dark-mode-toggle>
+  </div>
 </template>
 
 <style>
+  .top-nav {
+    display: flex;
+    align-items: center;
+  }
+
   .top-nav-bar {
     display: flex;
     align-items: center;

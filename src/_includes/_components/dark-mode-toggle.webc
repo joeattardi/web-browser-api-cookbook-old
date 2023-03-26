@@ -1,0 +1,46 @@
+<script>
+  const button = document.querySelector('#theme-toggle');
+  button.addEventListener('click', event => {
+    const theme = document.documentElement.className;
+    const newTheme = document.documentElement.className === 'dark' ? 'light' : 'dark';
+    document.documentElement.className = newTheme;
+    sessionStorage.setItem('theme', newTheme);
+    updateTheme();
+  });
+
+  function updateTheme() {
+    const labels = {
+      light_mode: 'light mode',
+      dark_mode: 'dark mode'
+    };
+
+    const theme = document.documentElement.className === 'dark' ? 'light_mode' : 'dark_mode';
+    button.title = `Switch to ${labels[theme]}`;
+    const icon = document.querySelector('#theme-toggle .material-symbols-sharp');
+    icon.textContent = theme;
+  }
+
+  updateTheme();
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    updateTheme();
+  });
+</script>
+
+<style>
+  #theme-toggle {
+    background: transparent;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin: 0 0.5em;
+  }
+</style>
+
+<button id="theme-toggle">
+  <span class="material-symbols-sharp">
+    light_mode
+  </span>
+</button>
