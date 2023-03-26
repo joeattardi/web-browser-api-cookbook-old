@@ -43,9 +43,14 @@ function removeTodo(element, todo) {
 
 function renderTodo(todo) {
   const element = todoTemplate.content.cloneNode(true).firstElementChild;
+  const id = Date.now();
+  const label = element.querySelector('.todo label');
+  label.textContent = todo.name;
+  label.setAttribute('for', id);
 
-  element.querySelector('.name').textContent = todo.name;
-  element.querySelector('input').addEventListener('click', event => {
+  const checkbox = element.querySelector('input');
+  checkbox.id = id;
+  checkbox.addEventListener('click', event => {
     if (event.target.checked) {
       removeTodo(element, todo);
     }
