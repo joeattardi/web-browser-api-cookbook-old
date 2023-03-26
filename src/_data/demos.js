@@ -40,10 +40,7 @@ function getDemos() {
       });
     });
 
-  console.log(demos);
   return demos;
 }
 
 module.exports = getDemos;
-
-getDemos();
