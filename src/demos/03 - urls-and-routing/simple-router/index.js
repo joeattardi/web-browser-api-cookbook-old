@@ -43,6 +43,12 @@ function createRouter() {
     renderCurrentUrlContent();
   });
 
+  if (window.location.href.endsWith('/full/')) {
+    app.querySelectorAll('a').forEach(link => link.href = `${link.getAttribute('href')}full/`);
+    router.routes.forEach(route => route.path += 'full/');
+  }
+  
+
   // On initial load, look at the URL and figure out what template we should display.
   renderCurrentUrlContent();
 
@@ -61,3 +67,10 @@ links.forEach(link => {
     router.navigate(event.target.getAttribute('href'));
   });
 });
+
+function checkFullScreenMode() {
+  if (window.location.href.endsWith('/full/')) {
+    app.querySelectorAll('a').forEach(link => link.href = `${link.getAttribute('href')}full/`);
+    router.routes.forEach(route => route.path += 'full/');
+  }  
+}

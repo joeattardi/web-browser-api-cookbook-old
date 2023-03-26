@@ -10,19 +10,16 @@
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/css/fullscreen.css' | url }}">
     <style>
-      {{ css | safe }}
-    </style>
-    <style>
-      {{ codeBlock.renderFiles(files.css, basedir)}}
+      {% include basedir + "/index.css" %}
     </style>
   </head>
   <body class="fullscreen">
       <h1>{{ title }}</h1>
       <main>
-        {{ codeBlock.renderFiles(files.html, basedir)}}
+        {% include basedir + "/demo.html" %}
       </main>
     <script>
-      {{ codeBlock.renderFiles(files.js, basedir)}}
+      {% include basedir + "/index.js" %}
     </script>
     <script>{% getBundle "js" %}</script>
   </body>

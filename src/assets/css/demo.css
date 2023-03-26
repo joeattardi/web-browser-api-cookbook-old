@@ -10,10 +10,16 @@
   margin-bottom: 0.5rem;
 }
 
+.demo-page h3 {
+  display: flex;
+  align-items: center;
+}
+
 .demo-page .demo {
   background: #ffffff;
   border-radius: 5px;
   border: 1px solid #9bc7e6;
+  position: relative;
 }
 
 .code-block h4 {
@@ -46,4 +52,22 @@
 
 .code-block .language.css {
   background: #C46210;
+}
+
+.fullscreen-link {
+  margin-left: 0.25em;
+  background: #ACCBE1;
+  width: 2em;
+  height: 2em;
+  padding: 0.75em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-link .material-symbols-sharp {
+  font-weight: bold;
+  color: #0F1F2A;
+  font-size: 1em;
 }

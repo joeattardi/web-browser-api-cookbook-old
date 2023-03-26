@@ -3,7 +3,6 @@
   
   {% import 'code-block.njk' as codeBlock %}
 
-
   {% set css %}{% include basedir + "/index.css" %}{% endset %}
   {% set html %}{% include basedir + "/demo.html" %}{% endset %}
   {% set js %}{% include basedir + "/index.js" %}{% endset %}
@@ -15,7 +14,14 @@
   {% endif %}
 
   <section>
-    <h3>Demo</h3>
+    <h3>
+      <span>Demo</span>
+       <a href="full/" title="Open full screen" class="fullscreen-link">
+        <span class="material-symbols-sharp">
+          open_in_full
+        </span>
+      </a>
+    </h3>
     <div class="demo">
       <style>
         {{ css | safe }}

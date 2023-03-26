@@ -1,5 +1,5 @@
 const path = require('path');
-const title = 'Parsing URLs';
+const title = 'Simple Routing';
 
 module.exports = {
   title,

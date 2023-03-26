@@ -1,0 +1,11 @@
+---
+pagination:
+  data: demos
+  alias: demo
+  size: 1
+permalink: "{{ demo.full }}"
+---
+{% set title = demo.title %}
+{% set basedir = demo.basedir %}
+
+{% include "fullscreen.njk" %}
